@@ -36,6 +36,10 @@ payload = {
     }
 }
 
+configure(
+    secret_key="sk_test_3539be9c0ece44499e6145cd15f58f82"
+)
+
 response = dispatch(
     path="/customers",
     method="POST",

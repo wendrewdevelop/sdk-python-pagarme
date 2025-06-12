@@ -1,10 +1,8 @@
 import base64
 from decouple import config
 from .handler import make_request as RequestHandler
+from .config import get_secret_key
 
-
-token = config("secret_key")
-basic_auth = base64.b64encode(f"{token}:".encode()).decode()
 
 pipeline = {
     "/customers": {
@@ -14,7 +12,7 @@ pipeline = {
             method="POST",
             payload=payload,
             headers = {
-                "Authorization": f'Basic {basic_auth}',
+                "Authorization": f'Basic {base64.b64encode(f"{get_secret_key()}:".encode()).decode()}',
                 "accept": "application/json",
                 "content-type": "application/json"
             }
