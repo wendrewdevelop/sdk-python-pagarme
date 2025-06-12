@@ -96,3 +96,18 @@ def make_request(url: str,
                 "message": f"Erro de conexão na requisição {method.upper()}: {exc}"
             }
         }
+
+
+"""
+-- USAGE:
+
+from sdk import dispatch
+
+response = dispatch(
+    "/api/v1/pagarme/payments/",
+    "POST",
+    payload={"amount": 1000}
+)
+print(response)
+
+"""

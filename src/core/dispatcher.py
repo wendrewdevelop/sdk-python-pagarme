@@ -1,7 +1,7 @@
 from .pipeline import pipeline
 
 
-def dispatch(path: str, method: str, data: dict = None):
+def dispatch(path: str, method: str, payload: dict = None):
     route = pipeline.get(path)
 
     if not route:
@@ -16,5 +16,4 @@ def dispatch(path: str, method: str, data: dict = None):
             "error": {"message": f"Método {method} não permitido para {path}"}
         }
 
-    # Executa a função da rota
-    return route["function"](data=data)
+    return route["function"](payload)
