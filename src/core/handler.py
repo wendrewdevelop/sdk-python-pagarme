@@ -73,3 +73,26 @@ def json_(code, message, success=False):
             "message": message
         }
     }
+
+
+def make_request(url: str,
+                 method: str = "GET",
+                 payload: dict = None,
+                 headers: dict = None):
+    try:
+        response = httpx.request(
+            method.upper(),
+            url,
+            json=payload,
+            headers=headers
+        )
+        return handle_response(response)
+
+    except httpx.RequestError as exc:
+        return {
+            "success": False,
+            "error": {
+                "code": 0,
+                "message": f"Erro de conexão na requisição {method.upper()}: {exc}"
+            }
+        }
