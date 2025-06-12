@@ -17,5 +17,18 @@ pipeline = {
                 "content-type": "application/json"
             }
         )
-    }
+    },
+    "/customers": {
+        "method": "GET",
+        "function": lambda payload,customer_id: RequestHandler(
+            url=f'{config("BASE_URL")}/customers/{customer_id}',
+            method="GET",
+            payload=payload,
+            headers = {
+                "Authorization": f'Basic {base64.b64encode(f"{get_secret_key()}:".encode()).decode()}',
+                "accept": "application/json",
+                "content-type": "application/json"
+            }
+        )
+    },
 }

@@ -68,10 +68,8 @@ def handle_response(response: httpx.Response):
 def json_(code, message, success=False):
     return {
         "success": success,
-        "error": {
-            "code": code,
-            "message": message
-        }
+        "code": code,
+        "message": message
     }
 
 
