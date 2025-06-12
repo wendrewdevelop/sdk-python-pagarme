@@ -2,39 +2,28 @@ from src import *
 
 
 payload = {
-    "name": "João Silva",
-    "email": "joao.silva@example.com",
-    "code": "cliente-123",
-    "document": "12345678909",  # CPF válido com 11 dígitos
-    "document_type": "CPF",
-    "type": "individual",
-    "gender": "male",
-    "birthdate": "01/01/1990",
-    "address": {
-        "country": "BR",
-        "state": "SP",
+    "number": "4111111111111111",
+    "holder_name": "Joao da Silva",
+    "holder_document": "12345678900",
+    "exp_month": 12,
+    "exp_year": 2028,
+    "cvv": "123",
+    "brand": "visa",
+    "label": "cartao_principal",
+    "billing_address": {
+        "line_1": "123, Rua Central, Centro",
+        "line_2": "Apto 101",
+        "zip_code": "01310000",
         "city": "São Paulo",
-        "zip_code": "01000000",
-        "line_1": "123, Rua da Esperança, Centro",
-        "line_2": "Apto 45"
-    },
-    "phones": {
-        "home_phone": {
-            "country_code": "55",
-            "area_code": "11",
-            "number": "23456789"
-        },
-        "mobile_phone": {
-            "country_code": "55",
-            "area_code": "11",
-            "number": "912345678"
-        }
+        "state": "SP",
+        "country": "BR"
     },
     "metadata": {
-        "plano": "premium",
-        "referencia": "campanha-maio"
+        "tipo": "corporativo",
+        "descricao": "Cartão principal do cliente"
     }
 }
+
 
 customer_id = "cus_701VNnF93TZXVqym"
 

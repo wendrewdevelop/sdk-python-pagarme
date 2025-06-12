@@ -12,3 +12,6 @@
 | 429    | Too Many Requests     | Limite de requisições excedido para o IP (rate limit).       |
 | 500    | Internal Server Error | Erro interno no servidor da API.                             |
 
+
+### Dashboard Pagar.me
+[https://id.pagar.me/signin](https://id.pagar.me/signin)
