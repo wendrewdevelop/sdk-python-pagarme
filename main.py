@@ -2,11 +2,11 @@ from src import *
 
 
 payload = {
-    "number": "4111111111111111",
+    "number": "4000000000000010",
     "holder_name": "Joao da Silva",
     "holder_document": "12345678900",
-    "exp_month": 12,
-    "exp_year": 2028,
+    "exp_month": 1,
+    "exp_year": 2030,
     "cvv": "123",
     "brand": "visa",
     "label": "cartao_principal",
@@ -32,9 +32,9 @@ configure(
 )
 
 response = dispatch(
-    path="/customers",
-    method="GET",
-    payload=None,
+    path=f"/customers/{customer_id}/cards/",
+    method="POST",
+    payload=payload,
     customer_id=customer_id
 )
 print(response)
